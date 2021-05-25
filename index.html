@@ -5,5 +5,47 @@
   </head>
   <body>
     My web page
+    <div id="display"></div>
+    <div id="result"></div>
+    <button onclick="pressNum(1)">1</button>
+    <button onclick="pressNum(2)">2</button>
+    <button onclick="pressNum(3)">3</button>
+    <button onclick="pressNum(4)">4</button>
+    <button onclick="pressNum(5)">5</button>
+    <button onclick="pressNum(6)">6</button>
+    <button onclick="pressNum(7)">7</button>
+    <button onclick="pressNum(8)">8</button>
+    <button onclick="pressNum(9)">9</button>
+    <button onclick="pressNum('+')">+</button>
+    <button onclick="pressNum('-')">-</button>
+    <button onclick="cal()">=</button>
+    <button onclick="del()">del</button>
+    <button onclick="clear1()">clear</button>
   </body>
+
+  <script>
+    const pressNum = (operand) => {
+      let display = document.getElementById("display");
+
+      display.innerHTML += operand;
+    };
+
+    const cal = () => {
+      let display = document.getElementById("display").innerText;
+      let result = document.getElementById("result");
+
+      result.innerHTML = eval(display);
+    };
+
+    const del = () => {
+      const display = document.getElementById("display");
+      display.innerHTML = display.innerText.slice(0, -1);
+    };
+
+    const clear1 = () => {
+      const display = document.getElementById("display");
+      display.innerHTML = "";
+      document.getElementById("result").innerHTML = "";
+    };
+  </script>
 </html>
